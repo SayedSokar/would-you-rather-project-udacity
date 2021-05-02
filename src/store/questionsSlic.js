@@ -12,24 +12,16 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const questionsSlic = createSlice({
   name: 'questions',
-  initialState: {},
+  initialState: {
+    list:[]
+  },
   reducers: {
-    RECEIVE_QUESTIONS: (state, action) => {
-      return {
-        ...state,
-        ...action.questions,
+    RECEIVE_QUESTIONS: (questions, action) => {
+      questions.list = action.payload
         
-      }
       
     },
-    RECEIVE_USERS: (state, action) => {
-      return {
-        ...state,
-        ...action.users,
-        
-      }
-      
-    },
+    
       
     
       
@@ -40,6 +32,6 @@ export const questionsSlic = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { RECEIVE_QUESTIONS, RECEIVE_USERS } = questionsSlic.actions
+export const { RECEIVE_QUESTIONS } = questionsSlic.actions
 
 export default questionsSlic.reducer

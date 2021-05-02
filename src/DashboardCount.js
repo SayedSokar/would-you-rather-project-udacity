@@ -6,9 +6,9 @@ import store from './store/configureStore'
 
 function DashboardCount() {
     // const [ check, setCheck ] = useState('s')
-const arr1='6ni6ok3ym7mf1p33lnez'
-    const questions = useSelector(state => state)
-    console.log('this is Dashboard the questions: ',questions)
+
+    const questions = useSelector(state => state.questions.list)
+    console.log('this is Dashboard the questions: ',questions, 'type is ==== ', typeof(questions))
      
 
     //  console.log(store)
