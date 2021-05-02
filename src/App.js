@@ -3,8 +3,8 @@ import DashboardCount from './DashboardCount';
 import { getInitialData } from './utils/api';
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { RECEIVE_QUESTIONS } from './store/questionsSlic'
-
+import { RECEIVE_QUESTIONS } from './store/questionsSlice'
+import {RECEIVE_USERS} from './store/usersSlice'
 function App() {
   // const [users, setUsers] = useState([])
   // const [questions, setQuestions] = useState([])
@@ -15,7 +15,7 @@ function App() {
     return getInitialData().then(({ users, questions }) => {
         console.log(users, questions)
          dispatch(RECEIVE_QUESTIONS(questions))
-          // dispatch(RECEIVE_USERS(response.users))
+          dispatch(RECEIVE_USERS(users))
         
       })
       

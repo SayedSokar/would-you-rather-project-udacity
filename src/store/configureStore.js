@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import questionsSlic from './questionsSlic'
+import questionsSlice from './questionsSlice'
+import usersSlice from './questionsSlice'
+import reducer from './reducer'
 
  const store = configureStore({
-    reducer: {
-      questions: questionsSlic
-  },
+    
+     reducer: reducer
+      
+
 })
 export default store

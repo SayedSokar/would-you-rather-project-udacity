@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-export const slice = createSlice({
+export const usersReducer = createSlice({
   name: 'users',
-    initialState: [],
+    initialState: {
+        list:[]
+    },
   reducers: {
     RECEIVE_USERS: (users, action) => {
-      users = action.payload
+      users.list = action.payload
     },
     }
 })
 
 
 // Action creators are generated for each case reducer function
-export const { RECEIVE_USERS } = slice.actions
+export const { RECEIVE_USERS } = usersReducer.actions
 
-export default slice.reducer
+export default usersReducer.reducer

@@ -1,13 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import test from './components/test'
-import store from './store/configureStore'
 // import { RECEIVE_QUESTIONS } from './store/questionsSlic'
 
 function DashboardCount() {
     // const [ check, setCheck ] = useState('s')
 
-    const questions = useSelector(state => state.questions.list)
+    const questions = useSelector(state => state.entities.questions.list)
     console.log('this is Dashboard the questions: ',questions, 'type is ==== ', typeof(questions))
      
 
