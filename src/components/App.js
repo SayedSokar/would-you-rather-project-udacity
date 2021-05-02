@@ -1,4 +1,4 @@
-import DashboardCount from './DashboardCount';
+import Home from './Home';
 import { getInitialData } from '../utils/api';
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       
-      <DashboardCount />,
+      <Home />,
       <div>
         
         

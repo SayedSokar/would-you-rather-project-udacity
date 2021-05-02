@@ -1,16 +1,18 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Tab } from 'semantic-ui-react';
 // import { RECEIVE_QUESTIONS } from './store/questionsSlic'
 
-function DashboardCount() {
+function Home() {
     // const [ check, setCheck ] = useState('s')
 
     const questions = useSelector(state => state.entities.questions.list)
-    console.log('this is Dashboard the questions: ',questions, 'type is ==== ', typeof(questions))
+    const users = useSelector(state => state.entities.users.list)
+
+    // console.log('this is Dashboard the questions: ',questions, 'type is ==== ', typeof(questions))
      
 
-    //  console.log(store)
-    
+     
     return (
         <div className="home">
             <h3>this is home </h3>
@@ -37,4 +39,4 @@ function DashboardCount() {
     );
 }
 
-export default DashboardCount
+export default Home
