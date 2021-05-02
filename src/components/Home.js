@@ -1,6 +1,7 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Tab } from 'semantic-ui-react';
+import UserCard from './UserCard'
 // import { RECEIVE_QUESTIONS } from './store/questionsSlic'
 
 function Home() {
@@ -13,30 +14,40 @@ function Home() {
      
 
      
-    return (
-        <div className="home">
-            <h3>this is home </h3>
-
-            {
-                Object.entries(questions).map((question) => (
-                    <div className="blog-preview" key={ question.id }>
-                        <h3>
-                            { question[1].id }
-                            
-                        </h3>
-                    </div>
-                    // <test question_author={ question[1].author }/>
-
-                    
-                //  console.log(question[1].author)
-                ))
-            }
-
-
-            
-        </div>
-        
-    );
+    return <Tab panes={panes({ questions })} className="tab" />;
 }
+const panes = props => {
+  const { questions } = props;
+  return [
+    {
+      menuItem: 'Unanswered',
+      render: () => (
+        <Tab.Pane>
+          {questions.answered.map(question => (
+            <UserCard
+              key={question.id}
+              question_id={question.id}
+              unanswered={true}
+            />
+          ))}
+        </Tab.Pane>
+      )
+    },
+    {
+      menuItem: 'Answered',
+      render: () => (
+        <Tab.Pane>
+          {questions.unanswered.map(question => (
+            <UserCard
+              key={question.id}
+              question_id={question.id}
+              unanswered={false}
+            />
+          ))}
+        </Tab.Pane>
+      )
+    }
+  ];
+};
 
 export default Home
