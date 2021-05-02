@@ -1,10 +1,9 @@
-import './App.css';
 import DashboardCount from './DashboardCount';
-import { getInitialData } from './utils/api';
+import { getInitialData } from '../utils/api';
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { RECEIVE_QUESTIONS } from './store/questionsSlice'
-import {RECEIVE_USERS} from './store/usersSlice'
+import { RECEIVE_QUESTIONS } from '../store/questionsSlice'
+import {RECEIVE_USERS} from '../store/usersSlice'
 function App() {
   // const [users, setUsers] = useState([])
   // const [questions, setQuestions] = useState([])
